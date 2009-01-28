@@ -9,9 +9,9 @@ Source0:        http://hg.ocaml.info/release/aifad/archive/aifad-release-%{versi
 # curl http://hg.ocaml.info/release/aifad/archive/release-${version}.tar.bz2 > aifad-release-${version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  ocaml-findlib
-BuildRequires:  ocaml-cfg
-BuildRequires:  ocaml-res
-BuildRequires:  ocaml-pcre
+BuildRequires:  ocaml-cfg-devel
+BuildRequires:  ocaml-res-devel
+BuildRequires:  ocaml-pcre-devel
 
 %description
 AIFAD stands for "Automated Induction of Functions over Algebraic Datatypes"
