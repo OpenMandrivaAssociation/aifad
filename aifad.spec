@@ -1,6 +1,6 @@
 Name:           aifad
 Version:        1.0.28
-Release:        %mkrel 2
+Release:        %mkrel 3
 Summary:        Machine learning system - Automated Induction of Functions over Algebraic Datatypes
 License:        GPL
 Group:          Development/Other
