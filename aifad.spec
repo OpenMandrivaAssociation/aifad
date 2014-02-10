@@ -1,18 +1,20 @@
-Name:		aifad
-Version:	1.0.28
-Release:	4
-Summary:	Automated Induction of Functions over Algebraic Datatypes
-License:	GPL
-Group:		Development/Other
-URL:		http://ocaml.info/home/ocaml_sources.html#aifad
-Source0:	http://hg.ocaml.info/release/aifad/archive/aifad-release-%{version}.tar.lzma
-# curl http://hg.ocaml.info/release/aifad/archive/release-${version}.tar.bz2 > aifad-release-${version}.tar.bz2
+%define _enable_debug_packages %{nil}
+%define debug_package %{nil}
 
+Summary:	Automated Induction of Functions over Algebraic Datatypes
+Name:		aifad
+Version:	2.0.2
+Release:	1
+License:	GPLv3+
+Group:		Development/Other
+Url:		https://bitbucket.org/mmottl/aifad
+Source0:	https://bitbucket.org/mmottl/aifad/downloads/aifad-%{version}.tar.gz
+BuildRequires:	menhir
 BuildRequires:	ocaml
-BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-cfg-devel
-BuildRequires:	ocaml-res-devel
+BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-pcre-devel
+BuildRequires:	ocaml-res-devel
 
 %description
 AIFAD stands for "Automated Induction of Functions over Algebraic Datatypes"
@@ -21,20 +23,27 @@ kinds of data. This allows users to more conveniently describe the data they
 want to have learnt, which can improve accuracy and complexity of resulting
 models.
 
-%prep
-%setup -q -n aifad-release-%{version}
-
-%build
-make opt
-
-%install
-install -d %{buildroot}%{_bindir}/
-install -d %{buildroot}%{_datadir}/vim/syntax/
-install -m 0755 ./src/aifad %{buildroot}%{_bindir}/
-install -m 0644 ./aifad.vim %{buildroot}%{_datadir}/vim/syntax/
-
 %files
-%doc LICENSE README.txt INSTALL.txt Changes TODO
-%doc examples
+%doc README.md AUTHORS.txt COPYING.txt CHANGES.txt TODO.md
+%doc examples/
 %{_bindir}/aifad
 %{_datadir}/vim/syntax/aifad.vim
+
+#----------------------------------------------------------------------------
+
+%prep
+%setup -q
+
+%build
+./configure \
+	--bindir %{_bindir} \
+	--destdir %{buildroot}
+
+make
+
+%install
+%makeinstall_std
+
+install -d %{buildroot}%{_datadir}/vim/syntax/
+install -m 0644 ./vim/aifad.vim %{buildroot}%{_datadir}/vim/syntax/
+
