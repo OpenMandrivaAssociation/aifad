@@ -4,7 +4,7 @@
 Summary:	Automated Induction of Functions over Algebraic Datatypes
 Name:		aifad
 Version:	2.0.2
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Development/Other
 Url:		https://bitbucket.org/mmottl/aifad
