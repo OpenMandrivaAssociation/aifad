@@ -3,12 +3,12 @@
 
 Summary:	Automated Induction of Functions over Algebraic Datatypes
 Name:		aifad
-Version:	2.0.2
-Release:	2
+Version:	2.3.0
+Release:	1
 License:	GPLv3+
 Group:		Development/Other
-Url:		https://bitbucket.org/mmottl/aifad
-Source0:	https://bitbucket.org/mmottl/aifad/downloads/aifad-%{version}.tar.gz
+Url:		http://mmottl.github.io/aifad/
+Source0:	https://github.com/mmottl/aifad/archive/refs/tags/%{version}.tar.gz
 BuildRequires:	menhir
 BuildRequires:	ocaml
 BuildRequires:	ocaml-cfg-devel
