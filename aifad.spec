@@ -7,7 +7,7 @@ Version:	2.3.0
 Release:	1
 License:	GPLv3+
 Group:		Development/Other
-Url:		http://mmottl.github.io/aifad/
+Url:		https://mmottl.github.io/aifad/
 Source0:	https://github.com/mmottl/aifad/archive/refs/tags/%{version}.tar.gz
 BuildRequires:	menhir
 BuildRequires:	ocaml
